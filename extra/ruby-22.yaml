@@ -1,0 +1,22 @@
+---
+  kind: "ImageStream"
+  apiVersion: "v1"
+  metadata:
+    name: "ruby"
+    creationTimestamp: null
+  spec:
+    dockerImageRepository: "openshift/ruby-22-centos7"
+    tags:
+      -
+        name: "latest"
+      -
+        name: "2.2"
+        annotations:
+          description: "Build and run Ruby 2.2 applications"
+          iconClass: "icon-ruby"
+          tags: "builder,ruby"
+          supports: "ruby:2.2,ruby"
+          version: "2.2"
+        from:
+          Kind: "ImageStreamTag"
+          Name: "latest"
